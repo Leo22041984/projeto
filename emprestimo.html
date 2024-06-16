@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1><a href="http://127.0.0.1:5500/index.html">CreditoCerto.com</a></h1>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/emprestimo.html">Empréstimo</a></li>
+                <li><a href="http://127.0.0.1:5500/cadastroCliente.html">Seja nosso cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Vertical -->
+    <nav class="vertical-menu">
+        <ul>
+            <li><a href="http://127.0.0.1:5500/index.html">Página Inicial</a></li>
+            <li><a href="http://127.0.0.1:5500/cadastroCliente.html">Seja nosso cliente</a></li>
+            <li><a href="http://127.0.0.1:5500/emprestimo.html">Empréstimo</a></li>
+            <li><a href="#">Financiamento</a></li>
+            <li><a href="#">Antecipação</a></li>
+        </ul>
+    </nav>
+
+    <!-- Carrossel -->
+    <div class="carousel">
+        <div class="carousel-image">
+            <div><img src="img/img-6.jpg" height="325" width="325"></div>
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="main-container">
+        <div class="container2">
+            <div class="products-container2">
+                <div class="card2">
+                    <div><img src="img/img-3.jpg" height="325" width="325"></div>
+                    <div class="card-content2">
+                        <h3>Empréstimo</h3>
+                        <p>O <strong>empréstimo pessoal</strong> é uma ótima opção para quem precisa de flexibilidade,
+                            pois você pode usar o dinheiro como preferir, seja para uma viagem, compra de bens ou
+                            pagamento de dívidas.</p>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div><img src="img/img-5.jpg" height="325" width="325"></div>
+                    <div class="card-content2">
+                        <h3>Empréstimo Consignado</h3>
+                        <p>Já o <strong>empréstimo consignado</strong> oferece taxas de juros mais baixas, pois as
+                            parcelas são descontadas diretamente do seu salário ou benefício, proporcionando maior
+                            segurança para o credor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de serviços -->
+        <div class="caixa-de-selecao">
+            <p><strong>Qual valor você precisa?</strong></p>
+            <div class="botao-seletor" id="valor-seletor">
+                <button data-valor="1000">R$ 1000,00</button>
+                <button data-valor="3000">R$ 3000,00</button>
+                <button data-valor="5000">R$ 5000,00</button>
+                <button data-valor="0">Outro Valor</button>
+            </div>
+            <p><strong>Em quantas vezes gostaria de pagar?</strong></p>
+            <div class="botao-seletor" id="prazo-seletor">
+                <button data-prazo="9">9x</button>
+                <button data-prazo="15">15x</button>
+                <button data-prazo="24">24x</button>
+                <button data-prazo="0">Outro Prazo</button>
+            </div>
+            <div class="botao-simular">
+                <button onclick="simularEmprestimo()">SIMULE AGORA</button>
+            </div>
+            <div>
+                <p><strong>Valor da Parcela:</strong></p>
+                <div class="resultado-parcela">R$ <span id="valor-parcela">0,00</span></div>
+            </div>
+
+            <!-- Botão Seja Nosso Cliente -->
+            <div class="botao-seja-cliente">
+                <button>Seja nosso cliente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Perguntas Frequentes -->
+    <section id="perguntas-frequentes">
+        <div class="container3">
+            <div class="row">
+                <div class="perguntas">
+                    <h2>Dúvidas frequentes!</h2>
+                    <ul>
+                        <li class="pergunta"
+                            data-resposta="Para fazer um empréstimo pessoal online, você deve acessar nosso site e preencher o formulário de solicitação com suas informações pessoais. Em seguida, nossa equipe avaliará sua solicitação e entrará em contato.">
+                            Como fazer um empréstimo pessoal online?</li>
+                        <li class="pergunta"
+                            data-resposta="A principal diferença é que no empréstimo pessoal você recebe o dinheiro diretamente e pode usá-lo como quiser, enquanto no financiamento, o valor é destinado para a compra de um bem específico, como um carro ou uma casa.">
+                            Qual a diferença entre empréstimo pessoal e financiamento?</li>
+                        <li class="pergunta"
+                            data-resposta="Sim, mesmo com restrições no nome é possível fazer um empréstimo, porém, as condições podem variar e estar sujeitas a aprovação.">
+                            Tenho restrições no meu nome, posso fazer empréstimo?</li>
+                        <li class="pergunta"
+                            data-resposta="O prazo para aprovação da proposta varia, mas geralmente ocorre entre 24 e 48 horas após o envio de todos os documentos necessários.">
+                            Qual o prazo da aprovação da proposta?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>
+            <span class="bold"><b>Site confiável 100% seguro <i class="fas fa-lock"></i></b></span>
+            <b> &copy; 2024</b>
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+
+    <script>
+        let valorSelecionado = 0;
+        let prazoSelecionado = 0;
+
+        document.querySelectorAll('#valor-seletor button').forEach(button => {
+            button.addEventListener('click', () => {
+                valorSelecionado = parseInt(button.getAttribute('data-valor'));
+                if (valorSelecionado === 0) {
+                    valorSelecionado = prompt('Digite o valor desejado:');
+                    valorSelecionado = parseFloat(valorSelecionado);
+                }
+                atualizarSimulacao();
+            });
+        });
+
+        document.querySelectorAll('#prazo-seletor button').forEach(button => {
+            button.addEventListener('click', () => {
+                prazoSelecionado = parseInt(button.getAttribute('data-prazo'));
+                if (prazoSelecionado === 0) {
+                    prazoSelecionado = prompt('Digite o número de parcelas desejado:');
+                    prazoSelecionado = parseInt(prazoSelecionado);
+                }
+                atualizarSimulacao();
+            });
+        });
+
+        function atualizarSimulacao() {
+            if (valorSelecionado > 0 && prazoSelecionado > 0) {
+                const valorParcela = (valorSelecionado / prazoSelecionado).toFixed(2);
+                document.getElementById('valor-parcela').innerText = valorParcela;
+            }
+        }
+
+        function simularEmprestimo() {
+            if (valorSelecionado > 0 && prazoSelecionado > 0) {
+                alert(`Empréstimo de R$ ${valorSelecionado} em ${prazoSelecionado} parcelas de R$ ${document.getElementById('valor-parcela').innerText}`);
+                // Resetando o valor da parcela após a simulação
+                document.getElementById('valor-parcela').innerText = '0,00';
+                valorSelecionado = 0;
+                prazoSelecionado = 0;
+            } else {
+                alert('Por favor, selecione um valor e um prazo.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = [
+                'img/img-7.jpg',
+                'img/img-3.jpg',
+                'img/img-5.jpg',
+                'img/img-4.jpg',
+                'img/img-6.jpg'
+            ];
+            let currentIndex = 0;
+            const carouselImage = document.querySelector('.carousel-image img');
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                carouselImage.src = images[currentIndex];
+            }
+
+            setInterval(showNextImage, 3000); // Mude a imagem a cada 3 segundos
+        });
+
+        document.querySelectorAll('.pergunta').forEach(pergunta => {
+            pergunta.addEventListener('click', function () {
+                const resposta = this.getAttribute('data-resposta');
+                let respostaElement = this.querySelector('.resposta');
+                if (!respostaElement) {
+                    respostaElement = document.createElement('div');
+                    respostaElement.classList.add('resposta');
+                    respostaElement.innerText = resposta;
+                    this.appendChild(respostaElement);
+                } else {
+                    respostaElement.classList.toggle('visible');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

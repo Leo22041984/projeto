@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditoCerto.com</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1><a href="http://127.0.0.1:5500/index.html">CreditoCerto.com</a></h1>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/emprestimo.html">Empréstimo</a></li>
+                <li><a href="http://127.0.0.1:5500/cadastroCliente.html">Seja nosso cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Vertical -->
+    <nav class="vertical-menu">
+        <ul>
+            <li><a href="http://127.0.0.1:5500/index.html">Página Inicial</a></li>
+            <li><a href="http://127.0.0.1:5500/cadastroCliente.html">Seja nosso cliente</a></li>
+            <li><a href="http://127.0.0.1:5500/emprestimo.html">Empréstimo</a></li>
+            <li><a href="#">Financiamento</a></li>
+            <li><a href="#">Antecipação</a></li>
+        </ul>
+    </nav>
+
+    <!-- Carrossel -->
+    <div class="carousel">
+        <div class="carousel-image">
+            <div><img src="img/img-7.jpg" height="325" width="325"></div>
+        </div>
+    </div>
+
+    <!-- Grid de serviços -->
+    <main class="container">
+        <section class="products-container">
+            <div class="card">
+                <div><img src="img/img-3.jpg" height="325" width="325"></div>
+                <h3>Empréstimo</h3>
+                <br>
+                <div>
+                    <p>No site <strong>CreditoCerto.com</strong>, oferecemos empréstimos pessoais e consignados para
+                        atender às suas necessidades financeiras.</p>
+                    <p>O <strong>empréstimo pessoal</strong> é uma ótima opção para quem precisa de flexibilidade, pois
+                        você pode usar o dinheiro como preferir, seja para uma viagem, compra de bens ou pagamento de
+                        dívidas.</p>
+                    <p>Já o <strong>empréstimo consignado</strong> oferece taxas de juros mais baixas, pois as parcelas
+                        são descontadas diretamente do seu salário ou benefício, proporcionando maior segurança para o
+                        credor.</p>
+                </div>
+                <a href="http://127.0.0.1:5500/emprestimo.html" class="btn"><b>Visitar</b></a>
+            </div>
+            <div class="card">
+                <div><img src="img/img-5.jpg" height="325" width="325"></div>
+                <h3>Financiamento</h3>
+                <br>
+                <div>
+                    <p>No <strong>CreditoCerto.com</strong>, facilitamos seu acesso ao financiamento que você precisa.</p>
+                    <p>Com opções flexíveis e taxas competitivas, nosso processo de financiamento é simples e ágil,
+                        proporcionando a você a oportunidade de adquirir seu veículo, imóvel ou realizar projetos
+                        pessoais.</p>
+                    <p>Basta preencher nossa solicitação online, e nossa equipe especializada estará pronta para
+                        auxiliá-lo em todas as etapas do processo.</p>
+                </div>
+                <br>
+                <br>
+                <a href="#" class="btn"><b>Visitar</b></a>
+            </div>
+            <div class="card">
+                <div><img src="img/img-4.jpg" height="325" width="325"></div>
+                <h3>Antecipação</h3>
+                <br>
+                <div>
+                    <p>Na <strong>CreditoCerto.com</strong>, oferecemos a antecipação do seu FGTS com facilidade e
+                        rapidez.</p>
+                    <p>Com taxas atrativas e sem burocracia, você pode antecipar uma parte do seu Fundo de Garantia por
+                        Tempo de Serviço para realizar seus projetos ou quitar dívidas.</p>
+                    <p>Basta preencher nosso formulário online e em breve você terá o valor desejado disponível em sua
+                        conta.</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <a href="#" class="btn"><b>Visitar</b></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>
+            <span class="bold"><b>Site confiável 100% seguro <i class="fas fa-lock"></i></b></span>
+            <b> &copy; 2024</b>
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    
+    <script>
+        // Funcionalidade Carrossel
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = [
+                'img/img-7.jpg',
+                'img/img-3.jpg',
+                'img/img-5.jpg',
+                'img/img-4.jpg'
+            ];
+            let currentIndex = 0;
+            const carouselImage = document.querySelector('.carousel-image img');
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                carouselImage.src = images[currentIndex];
+            }
+
+            setInterval(showNextImage, 3000); // Mude a imagem a cada 3 segundos
+        });
+
+        // Role até a seção
+
+        document.querySelectorAll('nav.vertical-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
